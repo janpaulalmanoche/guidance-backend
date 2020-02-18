@@ -32,4 +32,4 @@ Route::resource('user','UserController');
 Route::resource('department','DepartmentController');
 Route::resource('type','TypeController');
 Route::resource('role','RoleController');
-
+Route::resource('place-stayin-on-gensan','PlaceStayingInGensanController');
