@@ -15,6 +15,11 @@ class DatabaseSeeder extends Seeder
         $this->call(UserSeeder::class);
 //        $this->call(EventsSeeder::class);
         $this->call(PlaceStringInGensanSeeder::class);
-//        $this->call(TimeSeeder::class);
+        $this->call(GenderSeeder::class);
+        $this->call(LiveAtPresentSeeder::class);
+        $this->call(ParentMartialStatusSeeder::class);
+        $this->call(SocioEconomicStatusSeeder::class);
+        $this->call(VehicleSeeder::class);
+        $this->call(AppliancesSeeder::class);
     }
 }

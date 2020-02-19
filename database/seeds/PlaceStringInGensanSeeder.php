@@ -27,6 +27,7 @@ class PlaceStringInGensanSeeder extends Seeder
             ],
             [
                 'place' => 'employer'
+
             ],
             [
                 'place' => 'others'
