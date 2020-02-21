@@ -11,6 +11,7 @@ use App\StudentEconomicStatus;
 use App\StudentFamilyVehicle;
 use App\StudentLiveAtPresent;
 use App\StudentParentStatus;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
@@ -36,6 +37,7 @@ class RecordController extends Controller
         $new_w = new PersonalInformationWhereDoYouStay;
         $new_w->place_staying_in_gensan_id = $request->place;
         $new_w->contact_number = $request->landlord_number;
+        $new_w->landlord_name = $request->landlord;
         $new_w->user_id = $request->user_id;
         $new_w->save();
 
@@ -113,6 +115,34 @@ class RecordController extends Controller
             'economic status' => $economic_status,
             'vehicle owned' => $vehicle
         ]);
+
+    }
+
+    public function student_record($student_id){
+
+        $user = User::find($student_id);
+        $personal_info = PersonalInformation::where('user_id',$student_id)->first();
+        $perosnal_info_where_you_stay =PersonalInformationWhereDoYouStay::with('place')->where('user_id',$student_id)->first();
+        $personal_info_incase_emergency = PersonalInformationIncaseOfEmergency::where('user_id',$student_id)->first();
+        $father = Father::where('user_id',$student_id)->first();
+        $mother = Mother::where('user_id',$student_id)->first();
+        $student_parent_status = StudentParentStatus::with('marital_status')->where('user_id',$student_id)->first();
+        $economic_status = StudentEconomicStatus::with('economic')->where('user_id',$student_id)->first();
+        $vehicle = StudentFamilyVehicle::with('vehicle')->where('user_id',$student_id)->first();
+
+        return response()->json([
+           'user' => $user,
+           'personal_info' => $personal_info,
+           'personal_where_do_stay' => $perosnal_info_where_you_stay,
+           'personal_incase_emergency' => $personal_info_incase_emergency,
+           'father' => $father,
+           'mother' => $mother,
+           'parent_status'=> $student_parent_status,
+           'economic' => $economic_status,
+            'vehicle' => $vehicle
+        ]);
+
+
 
     }
 

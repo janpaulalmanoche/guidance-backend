@@ -45,3 +45,4 @@ Route::resource('appliance','ApplianceController');
 
 
 Route::post('store','RecordController@store');
+Route::get('record/{student_id}','RecordController@student_record');

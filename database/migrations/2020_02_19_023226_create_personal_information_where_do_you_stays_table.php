@@ -17,6 +17,7 @@ class CreatePersonalInformationWhereDoYouStaysTable extends Migration
             $table->bigIncrements('id');
             $table->integer('personal_information_id')->nullable();
             $table->integer('user_id')->nullable();
+            $table->string('landlord_name')->nullable();
             $table->integer('place_staying_in_gensan_id')->nullable();
             $table->string('contact_number')->nullable();
             $table->timestamps();

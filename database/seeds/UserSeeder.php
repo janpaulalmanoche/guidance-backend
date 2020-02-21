@@ -29,7 +29,7 @@ class UserSeeder extends Seeder
                 'middle_name' => 'adminM' ,
                 'last_name' => 'adminL',
                 'id_no' => 'c-189892',
-                'type_id' => '1',
+                'type_id' => '3',
                 'department_id' => 2,
                 'email' => 'admin@gmail.com',
                 'password' => \Illuminate\Support\Facades\Hash::make( '12345'),
@@ -44,8 +44,8 @@ class UserSeeder extends Seeder
 
         $data3 = [
             ['type' => 'student'],
-           [ 'type' => 'staff'],
-            ['type' => 'working']
+            ['type' => 'working'],
+            [ 'type' => 'staff'],
         ];
         \App\Type::insert($data3);
 

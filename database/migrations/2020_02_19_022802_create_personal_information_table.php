@@ -18,8 +18,8 @@ class CreatePersonalInformationTable extends Migration
             $table->integer('user_id')->nullable();
             $table->date('birth_date')->nullable();
             $table->string('place_of_birth')->nullable();
-            $table->integer('birth_order')->nullable();
-            $table->integer('no_of_sibling')->nullable();
+            $table->string('birth_order')->nullable();
+            $table->string('no_of_sibling')->nullable();
             $table->string('religion')->nullable();
             $table->string('tribal_group')->nullable();
             $table->string('contact_no')->nullable();

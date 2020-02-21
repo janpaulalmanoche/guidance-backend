@@ -16,8 +16,8 @@ class CreateBirthInformationTable extends Migration
         Schema::create('birth_information', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->date('birth_date');
-            $table->integer('birth_order');
-            $table->integer('number_of_siblings');
+            $table->string('birth_order');
+            $table->string('number_of_siblings');
             $table->timestamps();
         });
     }

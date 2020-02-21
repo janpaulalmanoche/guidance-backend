@@ -40,7 +40,7 @@ class UserController extends Controller
         public function index(){
             return response()->json([
                 'data' => User::with('role','type','department')->where('role_id',2)
-                    ->where('type_id','!=',2)->get()
+                    ->where('type_id','!=',3)->get()
             ]);
         }
 
