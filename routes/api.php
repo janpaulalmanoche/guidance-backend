@@ -29,6 +29,8 @@ Route::get('/haha',function (){
 Route::post('login','UserController@login');
 Route::get('/system-users','UserController@system_users');
 Route::resource('user','UserController');
+Route::get('search/{user_name}','UserController@search');
+
 Route::resource('department','DepartmentController');
 Route::resource('type','TypeController');
 Route::resource('role','RoleController');
