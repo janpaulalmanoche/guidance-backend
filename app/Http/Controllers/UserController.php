@@ -47,7 +47,9 @@ class UserController extends Controller
         //search student
             public function search($user_name){
 //            $count = User::where('last_name','=',$user_name)->count();
-                $user = User::with('role','type','department')->where('last_name','like','%'.$user_name.'%')->get();
+                $user = User::with('role','type','department')
+                    ->where('type_id','!=',3)
+                    ->where('last_name','like','%'.$user_name.'%')->get();
 
 //            if($count >= 1){
 //                return response()->json(false);
