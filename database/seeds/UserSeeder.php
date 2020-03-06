@@ -14,25 +14,25 @@ class UserSeeder extends Seeder
         //
         $data = [
             [
-            'first_name' => 'teacher1' ,
-            'middle_name' => 'cru' ,
-            'last_name' => 'dela',
-            'id_no' => 'c-18989',
+                'first_name' => 'teacher1',
+                'middle_name' => 'cru',
+                'last_name' => 'dela',
+                'id_no' => 'c-18989',
                 'department_id' => 1,
-            'email' => 'pol@gmail.com',
+                'email' => 'pol@gmail.com',
                 'role_id' => '2',
                 'type_id' => '2',
-            'password' => \Illuminate\Support\Facades\Hash::make( '12345')
+                'password' => \Illuminate\Support\Facades\Hash::make('12345')
             ],
             [
-                'first_name' => 'admin' ,
-                'middle_name' => 'adminM' ,
+                'first_name' => 'admin',
+                'middle_name' => 'adminM',
                 'last_name' => 'adminL',
                 'id_no' => 'c-189892',
                 'type_id' => '3',
                 'department_id' => 2,
                 'email' => 'admin@gmail.com',
-                'password' => \Illuminate\Support\Facades\Hash::make( '12345'),
+                'password' => \Illuminate\Support\Facades\Hash::make('12345'),
                 'role_id' => '1',
             ]
         ];
@@ -45,7 +45,7 @@ class UserSeeder extends Seeder
         $data3 = [
             ['type' => 'student'],
             ['type' => 'working'],
-            [ 'type' => 'staff'],
+            ['type' => 'staff'],
         ];
         \App\Type::insert($data3);
 

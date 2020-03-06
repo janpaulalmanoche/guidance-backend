@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration
             $table->integer('department_id')->nullable();
             $table->integer('type_id');
             $table->integer('role_id');
+            $table->string('archive')->default('false');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

@@ -48,3 +48,10 @@ Route::resource('appliance','ApplianceController');
 
 Route::post('store','RecordController@store');
 Route::get('record/{student_id}','RecordController@student_record');
+Route::get('archive','ArchiveController@index');
+Route::get('delete-old-record','ArchiveController@deletee');
+Route::post('req-update','UserUpdateController@store');
+Route::get('req-update-index','UserUpdateController@index');
+Route::get('req-update-approve/{userupdateid}','UserUpdateController@approve');
+
+
